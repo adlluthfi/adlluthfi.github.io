@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -170,7 +171,7 @@
 			font-size: 1rem;
 		}
 
-		.card .content p + p {
+		.card .content p+p {
 			margin-top: 12px;
 		}
 
@@ -305,6 +306,30 @@
 			}
 		}
 
+		.ppt-section {
+			animation-delay: 0.58s;
+		}
+
+		.ppt-container {
+			position: relative;
+			width: 100%;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			background: #000;
+			border-radius: 12px;
+			margin-top: 12px;
+		}
+
+		.ppt-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+
 		@media (max-width: 900px) {
 			.grid {
 				grid-template-columns: 1fr;
@@ -333,6 +358,7 @@
 		}
 	</style>
 </head>
+
 <body>
 	<div class="container">
 		<section class="profile">
@@ -345,12 +371,9 @@
 			<article class="card">
 				<div class="title">Video YouTube</div>
 				<div class="video-wrap">
-					<iframe
-						src="https://www.youtube.com/embed/8_wosFLNJpM"
-						title="Video YouTube Saya"
+					<iframe src="https://www.youtube.com/embed/8_wosFLNJpM" title="Video YouTube Saya"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen
-					></iframe>
+						allowfullscreen></iframe>
 				</div>
 			</article>
 
@@ -358,28 +381,26 @@
 				<div class="title">T1</div>
 				<div class="content">
 					<p>
-						1. Record yourself in a 1 to 3 minutes videos reflecting (1) what you have learned (you didn't know before and now you know) about verbal and nonverbal communication; (2) What surprised you and what you want to know more?  
-</p>
-					<p>
-						 2. Upload your reflection video either in a YouTube channel or Google Drive
-</p>
-					<p>
-						3. Link your video into your Google Sites 
-</p>
-					<p>
-						4. Send the link to the e-learning 
+						1. Record yourself in a 1 to 3 minutes videos reflecting (1) what you have learned (you didn't
+						know before and now you know) about verbal and nonverbal communication; (2) What surprised you
+						and what you want to know more?
 					</p>
-				
+					<p>
+						2. Upload your reflection video either in a YouTube channel or Google Drive
+					</p>
+					<p>
+						3. Link your video into your Google Sites
+					</p>
+					<p>
+						4. Send the link to the e-learning
+					</p>
+
 				</div>
 			</article>
 
 			<article class="card">
 				<div class="title">Poster</div>
-				<img
-					class="poster"
-					src="poster.png"
-					alt="Poster tugas saya"
-				/>
+				<img class="poster" src="poster.png" alt="Poster tugas saya" />
 			</article>
 
 			<article class="card">
@@ -387,28 +408,34 @@
 				<div class="content">
 					<p>
 						<strong>People-Oriented Listeners</strong>
-						
+
 					</p>
 					<p>
-							People-oriented listeners are people who focus more on relationships and emotions when they listen to someone speaking.
-					They usually care about the speaker's feelings and enjoy personal stories or real-life experiences.
-					For example, when someone gives a presentation, people-oriented listeners prefer stories about people rather than just data or statistics.
-					So, to engage these listeners, a presenter can share personal stories, experiences, or examples that involve people.
-						</p>
-					<p>
-					<strong>Include Q&A Sessions</strong>
-						</p>
-					<p>
-						During a presentation, the audience's attention span is usually limited. Because of that, it is important to make the presentation more interactive.
-					One way to do this is by including Question and Answer sessions.
-					Q&A sessions allow the audience to ask questions, share their opinions, and become more involved in the presentation.
-					This helps the audience stay focused and understand the topic better.
+						People-oriented listeners are people who focus more on relationships and emotions when they
+						listen to someone speaking.
+						They usually care about the speaker's feelings and enjoy personal stories or real-life
+						experiences.
+						For example, when someone gives a presentation, people-oriented listeners prefer stories about
+						people rather than just data or statistics.
+						So, to engage these listeners, a presenter can share personal stories, experiences, or examples
+						that involve people.
 					</p>
-					<p> 
+					<p>
+						<strong>Include Q&A Sessions</strong>
+					</p>
+					<p>
+						During a presentation, the audience's attention span is usually limited. Because of that, it is
+						important to make the presentation more interactive.
+						One way to do this is by including Question and Answer sessions.
+						Q&A sessions allow the audience to ask questions, share their opinions, and become more involved
+						in the presentation.
+						This helps the audience stay focused and understand the topic better.
+					</p>
+					<p>
 						<strong>152024211 abdullah luthfi</strong>
 					</p>
 					<p>
-					<strong>152023103 Muhammad Roji Taufik</strong>
+						<strong>152023103 Muhammad Roji Taufik</strong>
 					</p>
 				</div>
 			</article>
@@ -463,11 +490,13 @@
 					</div>
 					<div class="section-item">
 						<div class="section-label">Purpose</div>
-						<div class="section-value">Educate audience on why humans are primary targets for modern cyberattacks</div>
+						<div class="section-value">Educate audience on why humans are primary targets for modern
+							cyberattacks</div>
 					</div>
 					<div class="section-item">
 						<div class="section-label">Core Problem</div>
-						<div class="section-value">Unlike software, human nature (fear, curiosity, trust) is an "unpatchable" vulnerability</div>
+						<div class="section-value">Unlike software, human nature (fear, curiosity, trust) is an
+							"unpatchable" vulnerability</div>
 					</div>
 					<div class="section-item">
 						<div class="section-label">5 Triggers</div>
@@ -476,6 +505,20 @@
 				</div>
 			</article>
 		</section>
+
+		<!-- Bagian Presentasi PPT -->
+		<section class="ppt-section">
+			<article class="section-box">
+				<h3>📊 Presentasi</h3>
+				<div class="ppt-container">
+					<iframe
+						src="https://docs.google.com/presentation/d/e/2PACX-1vQD5WiCPH99Eyji4AFHGgZs4KFIFzsXgRXB4ts0lFv0EKeIPu6TW03Rt0MES69XFQ/pubembed?start=true&loop=true&delayms=60000"
+						frameborder="0" allowfullscreen="true" mozallowfullscreen="true"
+						webkitallowfullscreen="true"></iframe>
+				</div>
+			</article>
+		</section>
 	</div>
 </body>
+
 </html>
