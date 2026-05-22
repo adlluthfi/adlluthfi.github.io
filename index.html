@@ -310,6 +310,17 @@
 			animation-delay: 0.58s;
 		}
 
+		.clickable-img {
+			cursor: pointer;
+			transition: transform 0.2s ease, filter 0.2s ease;
+			display: block;
+		}
+
+		.clickable-img:hover {
+			transform: scale(1.05);
+			filter: brightness(1.1);
+		}
+
 		.ppt-container {
 			position: relative;
 			width: 100%;
@@ -554,8 +565,14 @@
 				<h3>🎓 Training</h3>
 				<div class="content-wrapper">
 					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-						<img src="gambar1.png" alt="Training Image 1" style="width: 100%; border-radius: 8px;" />
-						<img src="gambar2.png" alt="Training Image 2" style="width: 100%; border-radius: 8px;" />
+						<a href="gambar1.png" target="_blank" rel="noopener">
+							<img src="gambar1.png" alt="Training Image 1" class="clickable-img"
+								style="width: 100%; border-radius: 8px;" />
+						</a>
+						<a href="gambar2.png" target="_blank" rel="noopener">
+							<img src="gambar2.png" alt="Training Image 2" class="clickable-img"
+								style="width: 100%; border-radius: 8px;" />
+						</a>
 					</div>
 				</div>
 			</article>
