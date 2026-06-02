@@ -341,6 +341,28 @@
 			border: none;
 		}
 
+		/* ── Local Video Section ── */
+		.local-video-section {
+			animation-delay: 0.66s;
+		}
+
+		.local-video-wrap {
+			position: relative;
+			width: 100%;
+			background: #000;
+			border-radius: 12px;
+			overflow: hidden;
+		}
+
+		.local-video-wrap video {
+			width: 100%;
+			height: auto;
+			display: block;
+			max-height: 520px;
+			object-fit: contain;
+			background: #000;
+		}
+
 		@media (max-width: 900px) {
 			.grid {
 				grid-template-columns: 1fr;
@@ -459,7 +481,7 @@
 				<div class="content-wrapper">
 					<div class="section-item">
 						<div class="section-label">Title</div>
-						<div class="section-value">Hack Mind: Why Humans Are Cybersecurity’s Greatest "Zero-Day Exploit"
+						<div class="section-value">Hack Mind: Why Humans Are Cybersecurity's Greatest "Zero-Day Exploit"
 						</div>
 					</div>
 					<div class="section-item">
@@ -598,6 +620,27 @@
 				</div>
 			</article>
 		</section>
+
+		<!-- ══ Bagian Video Lokal (baru) ══ -->
+		<section class="ppt-section local-video-section">
+			<article class="section-box">
+				<h3>🎬 Video</h3>
+				<div class="content-wrapper">
+					<div class="local-video-wrap">
+						<!--
+							Ganti "nama-video-kamu.mp4" dengan nama file video yang sebenarnya.
+							Pastikan file video berada di folder yang sama dengan file HTML ini.
+							Format yang didukung browser: .mp4, .webm, .ogg
+						-->
+						<video controls preload="metadata" poster="">
+							<source src="video.mp4" type="video/mp4" />
+							Browser kamu tidak mendukung pemutaran video.
+						</video>
+					</div>
+				</div>
+			</article>
+		</section>
+
 	</div>
 </body>
 
