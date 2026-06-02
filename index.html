@@ -621,21 +621,25 @@
 			</article>
 		</section>
 
-		<!-- ══ Bagian Video Lokal (baru) ══ -->
+		<!-- ══ Bagian Video Google Drive (baru) ══ -->
 		<section class="ppt-section local-video-section">
 			<article class="section-box">
 				<h3>🎬 Video Presentasi</h3>
 				<div class="content-wrapper">
-					<div class="local-video-wrap">
-						<!--
-							Ganti "nama-video-kamu.mp4" dengan nama file video yang sebenarnya.
-							Pastikan file video berada di folder yang sama dengan file HTML ini.
-							Format yang didukung browser: .mp4, .webm, .ogg
-						-->
-						<video controls preload="metadata" poster="">
-							<source src="video.mp4" type="video/mp4" />
-							Browser kamu tidak mendukung pemutaran video.
-						</video>
+					<!--
+						Cara mendapatkan link embed Google Drive:
+						1. Buka file video di Google Drive
+						2. Klik kanan → "Bagikan" → pastikan akses "Siapa saja yang memiliki link"
+						3. Salin ID file dari URL: drive.google.com/file/d/[ID_FILE_DI_SINI]/view
+						4. Ganti GDRIVE_FILE_ID di bawah dengan ID tersebut
+					-->
+					<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; border-radius: 12px; overflow: hidden; background: #000;">
+						<iframe
+							src="https://drive.google.com/file/d/1yaRGYQxI9JwpYbLAvuTxSKHj-C2j5xvd/view?usp=drive_link"
+							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+							allow="autoplay"
+							allowfullscreen>
+						</iframe>
 					</div>
 				</div>
 			</article>
