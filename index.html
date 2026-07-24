@@ -41,7 +41,6 @@
     position:relative;
     padding:3rem 3.25rem 3.5rem;
   }
-  /* schematic corner brackets on the whole sheet */
   .sheet::before, .sheet::after,
   .sheet .bl, .sheet .br{
     content:"";
@@ -88,24 +87,15 @@
     border-style:solid;
     border-width:0;
   }
- .photo-frame img, .photo-frame .fallback {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 2px;
-    display: block;
-    background: linear-gradient(145deg,#1a2740,#0e1626);
-
-    /* --- TAMBAHAN UNTUK PENINGKATAN VISUAL --- */
-    /* Mengatur ketajaman & sedikit nuansa cool tone */
-    filter: contrast(105%) brightness(95%) saturation(90%);
-    image-rendering: -webkit-optimize-contrast; /* Membantu menajamkan garis piksel */
-    transition: filter 0.3s ease, transform 0.3s ease;
-  }
-
-  /* Efek sedikit terang saat kursor diarahkan ke foto */
-  .photo-frame:hover img {
-    filter: contrast(110%) brightness(105%) saturation(100%);
+  .photo-frame::before{ top:-6px; left:-6px; border-top-width:2px; border-left-width:2px; }
+  .photo-frame::after{ bottom:-6px; right:-6px; border-bottom-width:2px; border-right-width:2px; }
+  .photo-frame img, .photo-frame .fallback{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:2px;
+    display:block;
+    background:linear-gradient(145deg,#1a2740,#0e1626);
+    image-rendering:auto;
   }
   .fallback{
     display:none;
@@ -293,10 +283,11 @@
       <div class="photo-frame">
         <img src="foto.jpeg" alt="Abdullah Luthfi"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="fallback">AL</div>
       </div>
       <div>
         <h1>Abdullah Luthfi</h1>
-        <div class="role">Game Developer · IoT &amp; AI Enthusiast · Network &amp; Security</div>
+        <div class="role">Game &amp; Web Developer · IoT &amp; AI Enthusiast · Network &amp; Security</div>
         <div class="contact-row">
           <a href="mailto:luthfikkc@gmail.com">✉ luthfikkc@gmail.com</a>
           <a href="https://github.com/adlluthfi" target="_blank">⌥ github.com/adlluthfi</a>
@@ -307,7 +298,7 @@
 
     <section>
       <div class="sec-head"><span class="idx">01</span><h2>Profile</h2><span class="rule"></span></div>
-      <p class="lede">Computer Network Engineering graduate now studying Informatics, with a hands-on range that spans game development, IoT hardware, and web security. Comfortable building a Unity game end-to-end, wiring up an IoT robot, or testing a website for vulnerabilities — and equally comfortable leading a group, having trained flag-ceremony (Paskibra) teams and taught ICT to elementary students. Currently exploring core AI algorithms to bring intelligent behaviour into future projects.</p>
+      <p class="lede">Computer Network Engineering graduate now studying Informatics, with a hands-on range that spans game development, web and mobile development, IoT hardware, and network &amp; web security. Comfortable building a Unity game end-to-end, shipping a website or a Cordova-based mobile app, wiring up an IoT robot, or testing a website for vulnerabilities — and equally comfortable leading a group, having trained flag-ceremony (Paskibra) teams and taught ICT to elementary students. Runs Linux day-to-day (EndeavourOS, Arch-based) and is currently exploring core AI algorithms to bring intelligent behaviour into future projects.</p>
     </section>
 
     <section>
@@ -319,7 +310,7 @@
             <span class="pos">Unity Game Developer</span>
             <span class="date">Ongoing</span>
           </div>
-          <div class="org">Dreambud — Independent / </div>
+          <div class="org">Dreambud — Solo Developer</div>
           <ul>
             <li>Building gameplay systems and mechanics in Unity Engine 6 (C#).</li>
             <li>Own end-to-end feature work from prototyping to implementation and testing.</li>
@@ -328,8 +319,42 @@
 
         <div class="titem">
           <div class="titem-head">
-            <span class="pos">Banquet Server</span>
+            <span class="pos">Website Developer</span>
             <span class="date">—</span>
+          </div>
+          <div class="org">Solo Developer</div>
+          <ul>
+            <li>Designed and built websites solo, from layout and styling through to functionality.</li>
+          </ul>
+        </div>
+
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">Mobile App Developer</span>
+            <span class="date">—</span>
+          </div>
+          <div class="org">Solo Developer</div>
+          <ul>
+            <li>Built cross-platform mobile apps solo using Apache Cordova, wrapping web front-ends into installable Android packages.</li>
+          </ul>
+        </div>
+
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">Network Maintenance Intern</span>
+            <span class="date">3 Month</span>
+          </div>
+          <div class="org">National Institute of Technology</div>
+          <ul>
+            <li>Tested and diagnosed network infrastructure — LAN cabling, switches, and access points — to identify faulty or outdated equipment.</li>
+            <li>Replaced hardware with specifications aligned to current networking standards to keep the infrastructure up to date.</li>
+          </ul>
+        </div>
+
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">Banquet Server</span>
+            <span class="date">1 Years</span>
           </div>
           <div class="org">Hotel Pullman</div>
           <ul>
@@ -340,9 +365,8 @@
         <div class="titem">
           <div class="titem-head">
             <span class="pos">ICT Teacher — Elementary School</span>
-            <span class="date">—</span>
+            <span class="date">1 Years</span>
           </div>
-          <div class="org">Basic School</div>
           <ul>
             <li>Taught foundational computer and technology literacy to elementary students.</li>
           </ul>
@@ -351,9 +375,8 @@
         <div class="titem">
           <div class="titem-head">
             <span class="pos">Paskibra Coach — Elementary &amp; Junior High</span>
-            <span class="date">—</span>
+            <span class="date">2 Years</span>
           </div>
-          <div class="org">Basic School &amp; Middle School</div>
           <ul>
             <li>Trained flag-ceremony (Paskibra) teams, building discipline, precision, and teamwork ahead of ceremonial events.</li>
           </ul>
@@ -368,7 +391,7 @@
       <div class="edu-item">
         <div class="edu-main">
           <div class="deg">Bachelor's Degree, Informatics <em style="color:var(--muted); font-style:normal;">(in progress)</em></div>
-          <div class="school">Bandung Institute of Technology — Indonesia</div>
+          <div class="school">National Institute of Technology — Indonesia</div>
         </div>
         <div class="date">2023 — Present</div>
       </div>
@@ -391,6 +414,7 @@
             <span class="tag">Unity Engine 6</span>
             <span class="tag">C#</span>
             <span class="tag">HTML / CSS / JS</span>
+            <span class="tag">Apache Cordova</span>
             <span class="tag">Git &amp; GitHub</span>
           </div>
         </div>
@@ -399,11 +423,13 @@
           <div class="tag-row">
             <span class="tag">Website Vulnerability Analysis</span>
             <span class="tag">Computer Networking</span>
+            <span class="tag">LAN / Switch / AP Maintenance</span>
           </div>
         </div>
         <div class="skill-group">
-          <div class="g-label">Hardware &amp; AI</div>
+          <div class="g-label">Systems &amp; Hardware</div>
           <div class="tag-row">
+            <span class="tag">Linux (Arch)</span>
             <span class="tag">IoT Robotics</span>
             <span class="tag">Embedded Systems</span>
             <span class="tag">AI / ML Algorithms</span>
@@ -420,7 +446,7 @@
       </div>
     </section>
 
-    <footer>ABDULLAH LUTHFI · CV LAST BUILT 2026 · v1.0</footer>
+    <footer>ABDULLAH LUTHFI</footer>
   </div>
 
 </body>
