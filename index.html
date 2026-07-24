@@ -1,651 +1,418 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>adlluthfi</title>
-	<style>
-		@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:opsz@9..40&family=Outfit:wght@300;400;600;700&display=swap");
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Luthfi — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1220;
+    --bg-grid: rgba(56,189,248,0.07);
+    --card:#111a2c;
+    --card-line:#1c2941;
+    --text:#e7edf6;
+    --muted:#8b98b3;
+    --cyan:#4fc3f7;
+    --cyan-dim: rgba(79,195,247,0.35);
+    --amber:#f5a623;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      linear-gradient(var(--bg-grid) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px) 0 0/40px 40px,
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.65;
+    padding:3.5rem 1.25rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    max-width:840px;
+    margin:0 auto;
+    background:var(--card);
+    border:1px solid var(--card-line);
+    border-radius:4px;
+    position:relative;
+    padding:3rem 3.25rem 3.5rem;
+  }
+  /* schematic corner brackets on the whole sheet */
+  .sheet::before, .sheet::after,
+  .sheet .bl, .sheet .br{
+    content:"";
+    position:absolute;
+    width:18px; height:18px;
+    border-color:var(--cyan-dim);
+    border-style:solid;
+    border-width:0;
+  }
+  .sheet::before{ top:-1px; left:-1px; border-top-width:2px; border-left-width:2px; }
+  .sheet::after{ top:-1px; right:-1px; border-top-width:2px; border-right-width:2px; }
+  .sheet .bl{ bottom:-1px; left:-1px; border-bottom-width:2px; border-left-width:2px; }
+  .sheet .br{ bottom:-1px; right:-1px; border-bottom-width:2px; border-right-width:2px; }
 
-		:root {
-			--bg-main: #0f1419;
-			--bg-secondary: #1a1f2e;
-			--card: rgba(20, 26, 40, 0.8);
-			--text: #ffffff;
-			--muted: #ffffff;
-			--accent: #00d4ff;
-			--accent-2: #ff6b35;
-			--line: rgba(228, 230, 235, 0.1);
-			--shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-			--radius: 22px;
-		}
+  .doc-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    color:var(--cyan);
+    text-transform:uppercase;
+    margin-bottom:2.25rem;
+    opacity:0.75;
+    display:flex; justify-content:space-between;
+  }
 
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
+  header{
+    display:flex;
+    gap:2rem;
+    align-items:flex-start;
+    padding-bottom:2rem;
+    border-bottom:1px solid var(--card-line);
+    margin-bottom:2.25rem;
+  }
+  .photo-frame{
+    position:relative;
+    width:112px; height:112px;
+    flex:0 0 auto;
+  }
+  .photo-frame::before, .photo-frame::after{
+    content:"";
+    position:absolute;
+    width:14px; height:14px;
+    border-color:var(--amber);
+    border-style:solid;
+    border-width:0;
+  }
+  .photo-frame::before{ top:-6px; left:-6px; border-top-width:2px; border-left-width:2px; }
+  .photo-frame::after{ bottom:-6px; right:-6px; border-bottom-width:2px; border-right-width:2px; }
+  .photo-frame img, .photo-frame .fallback{
+    width:100%; height:100%;
+    object-fit:cover;
+    border-radius:2px;
+    display:block;
+    background:linear-gradient(145deg,#1a2740,#0e1626);
+  }
+  .fallback{
+    display:none;
+    align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:2rem; font-weight:700;
+    color:var(--cyan);
+    letter-spacing:0.05em;
+  }
 
-		body {
-			font-family: "Outfit", "Segoe UI", sans-serif;
-			color: var(--text);
-			min-height: 100vh;
-			background: linear-gradient(150deg, var(--bg-main), var(--bg-secondary));
-			padding: 34px 16px 42px;
-			position: relative;
-			overflow-x: hidden;
-		}
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:2.15rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    color:#fff;
+  }
+  .role{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--amber);
+    font-size:0.92rem;
+    margin-top:0.35rem;
+    letter-spacing:0.02em;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem;
+    margin-top:1rem;
+  }
+  .contact-row a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.76rem;
+    color:var(--muted);
+    text-decoration:none;
+    border:1px solid var(--card-line);
+    padding:0.3rem 0.65rem;
+    border-radius:3px;
+    transition:border-color 0.15s, color 0.15s;
+  }
+  .contact-row a:hover{ color:var(--cyan); border-color:var(--cyan-dim); }
 
-		body::before,
-		body::after {
-			content: "";
-			position: fixed;
-			z-index: -1;
-			filter: blur(2px);
-		}
+  section{ margin-bottom:2.25rem; }
+  .sec-head{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+    margin-bottom:1.15rem;
+  }
+  .sec-head .idx{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    color:var(--cyan);
+    opacity:0.8;
+  }
+  .sec-head h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:0.95rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#fff;
+    font-weight:600;
+  }
+  .sec-head .rule{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, var(--card-line), transparent);
+  }
 
-		body::before {
-			width: 380px;
-			height: 380px;
-			left: -90px;
-			top: -110px;
-			background: radial-gradient(circle, rgba(0, 212, 255, 0.1), transparent 65%);
-		}
+  p.lede{ color:var(--muted); font-size:0.96rem; max-width:65ch; }
 
-		body::after {
-			width: 360px;
-			height: 360px;
-			right: -80px;
-			bottom: -120px;
-			background: radial-gradient(circle, rgba(255, 107, 53, 0.1), transparent 67%);
-		}
+  .timeline{ position:relative; padding-left:1.4rem; }
+  .timeline::before{
+    content:"";
+    position:absolute; left:3px; top:6px; bottom:6px;
+    width:1px;
+    background:var(--card-line);
+  }
+  .titem{ position:relative; margin-bottom:1.5rem; }
+  .titem:last-child{ margin-bottom:0; }
+  .titem::before{
+    content:"";
+    position:absolute; left:-1.4rem; top:0.35rem;
+    width:7px; height:7px;
+    border:1.5px solid var(--cyan);
+    background:var(--card);
+    border-radius:1px;
+    transform:rotate(45deg);
+  }
+  .titem-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .titem-head .pos{ font-weight:600; color:#fff; font-size:1rem; }
+  .titem-head .date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.74rem;
+    color:var(--amber);
+    white-space:nowrap;
+  }
+  .titem .org{ color:var(--cyan); font-size:0.85rem; margin-top:0.15rem; margin-bottom:0.5rem; }
+  .titem ul{ padding-left:1.1rem; color:var(--muted); font-size:0.9rem; }
+  .titem li{ margin-bottom:0.3rem; }
 
-		.container {
-			width: min(1180px, 100%);
-			margin: 0 auto;
-			display: grid;
-			gap: 24px;
-		}
+  .edu-item{ display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;}
+  .edu-item:last-child{ margin-bottom:0; }
+  .edu-main .deg{ font-weight:600; color:#fff; }
+  .edu-main .school{ color:var(--muted); font-size:0.88rem; margin-top:0.15rem; }
+  .edu-item .date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.74rem;
+    color:var(--amber);
+    white-space:nowrap;
+  }
 
-		.profile {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-			background: linear-gradient(130deg, rgba(20, 26, 40, 0.9), rgba(26, 31, 46, 0.8));
-			backdrop-filter: blur(4px);
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			padding: 28px 24px;
-			border: 1px solid var(--line);
-			position: relative;
-			isolation: isolate;
-			animation: revealUp 0.7s ease both;
-		}
+  .skill-groups{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+  }
+  .skill-group .g-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.7rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:0.6rem;
+  }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:0.45rem; }
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    color:var(--cyan);
+    background:rgba(79,195,247,0.08);
+    border:1px solid var(--cyan-dim);
+    padding:0.28rem 0.65rem;
+    border-radius:3px;
+  }
 
-		.profile::before {
-			content: "";
-			position: absolute;
-			inset: 0;
-			border-radius: inherit;
-			background: linear-gradient(100deg, rgba(0, 212, 255, 0.05), transparent 35%, rgba(255, 107, 53, 0.05));
-			z-index: -1;
-		}
+  .grid2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2rem;
+  }
 
-		.profile img {
-			width: 170px;
-			height: 170px;
-			object-fit: cover;
-			border-radius: 999px;
-			border: 5px solid rgba(0, 212, 255, 0.2);
-			box-shadow: 0 10px 26px rgba(0, 212, 255, 0.15);
-		}
+  footer{
+    margin-top:2.5rem;
+    padding-top:1.25rem;
+    border-top:1px solid var(--card-line);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    color:var(--muted);
+    opacity:0.6;
+    letter-spacing:0.05em;
+  }
 
-		.profile h1 {
-			margin-top: 16px;
-			font-family: "DM Serif Display", serif;
-			font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-			color: #00d4ff;
-			letter-spacing: 0.3px;
-		}
+  @media (max-width:640px){
+    body{ padding:1.5rem 0.75rem; }
+    .sheet{ padding:2rem 1.25rem 2.5rem; }
+    header{ flex-direction:column; }
+    .skill-groups, .grid2{ grid-template-columns:1fr; }
+    h1{ font-size:1.7rem; }
+  }
 
-		.profile p {
-			margin-top: 6px;
-			font-size: 1rem;
-			color: #ffffff;
-		}
-
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 24px;
-		}
-
-		.card {
-			background: var(--card);
-			backdrop-filter: blur(3px);
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			border: 1px solid var(--line);
-			overflow: hidden;
-			min-height: 320px;
-			transform: translateY(16px);
-			opacity: 0;
-			animation: revealUp 0.6s ease forwards;
-			transition: transform 0.25s ease, box-shadow 0.25s ease;
-		}
-
-		.card:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 22px 42px rgba(0, 212, 255, 0.2);
-			border-color: rgba(0, 212, 255, 0.3);
-		}
-
-		.card .title {
-			padding: 16px 18px 14px;
-			font-weight: 700;
-			font-size: 1.02rem;
-			color: #00d4ff;
-			border-bottom: 1px solid var(--line);
-			background: linear-gradient(90deg, rgba(0, 212, 255, 0.05), rgba(255, 107, 53, 0.05));
-			position: relative;
-		}
-
-		.card .title::before {
-			content: "";
-			position: absolute;
-			left: 18px;
-			bottom: 8px;
-			width: 48px;
-			height: 3px;
-			border-radius: 99px;
-			background: linear-gradient(90deg, var(--accent), var(--accent-2));
-		}
-
-		.card .content {
-			padding: 18px 20px 22px;
-			line-height: 1.75;
-			color: #ffffff;
-			font-size: 1rem;
-		}
-
-		.card .content p+p {
-			margin-top: 12px;
-		}
-
-		.two-column {
-			display: grid;
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 24px;
-		}
-
-		.section-box {
-			background: var(--card);
-			backdrop-filter: blur(3px);
-			border-radius: var(--radius);
-			box-shadow: var(--shadow);
-			border: 1px solid var(--line);
-			padding: 0;
-			transform: translateY(16px);
-			opacity: 0;
-			animation: revealUp 0.6s ease forwards;
-			transition: transform 0.25s ease, box-shadow 0.25s ease;
-			overflow: hidden;
-		}
-
-		.section-box:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 22px 42px rgba(0, 212, 255, 0.2);
-			border-color: rgba(0, 212, 255, 0.3);
-		}
-
-		.section-box h3 {
-			font-size: 1.15rem;
-			font-weight: 700;
-			color: #00d4ff;
-			padding: 18px 20px;
-			background: linear-gradient(90deg, rgba(0, 212, 255, 0.1), rgba(255, 107, 53, 0.05));
-			border-bottom: 2px solid var(--accent);
-			margin: 0;
-		}
-
-		.section-box .content-wrapper {
-			padding: 20px;
-		}
-
-		.section-item {
-			display: grid;
-			grid-template-columns: 140px 1fr;
-			gap: 12px;
-			margin-bottom: 16px;
-			padding-bottom: 16px;
-			border-bottom: 1px solid var(--line);
-		}
-
-		.section-item:last-child {
-			margin-bottom: 0;
-			padding-bottom: 0;
-			border-bottom: none;
-		}
-
-		.section-label {
-			font-weight: 700;
-			color: var(--accent);
-			font-size: 0.95rem;
-		}
-
-		.section-value {
-			color: #ffffff;
-			font-size: 0.95rem;
-			line-height: 1.5;
-		}
-
-		.video-wrap {
-			position: relative;
-			width: 100%;
-			padding-top: 56.25%;
-			background: #000;
-		}
-
-		.video-wrap iframe {
-			position: absolute;
-			inset: 0;
-			width: 100%;
-			height: 100%;
-			border: 0;
-		}
-
-		.poster {
-			width: 100%;
-			height: calc(100% - 55px);
-			object-fit: contain;
-			background: rgba(0, 212, 255, 0.05);
-			display: block;
-		}
-
-		.highlight {
-			color: var(--accent);
-			font-weight: 700;
-		}
-
-		.card:nth-child(1) {
-			animation-delay: 0.1s;
-		}
-
-		.card:nth-child(2) {
-			animation-delay: 0.18s;
-		}
-
-		.card:nth-child(3) {
-			animation-delay: 0.26s;
-		}
-
-		.card:nth-child(4) {
-			animation-delay: 0.34s;
-		}
-
-		.section-box:nth-child(1) {
-			animation-delay: 0.42s;
-		}
-
-		.section-box:nth-child(2) {
-			animation-delay: 0.5s;
-		}
-
-		@keyframes revealUp {
-			from {
-				opacity: 0;
-				transform: translateY(16px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		.ppt-section {
-			animation-delay: 0.58s;
-		}
-
-		.clickable-img {
-			cursor: pointer;
-			transition: transform 0.2s ease, filter 0.2s ease;
-			display: block;
-		}
-
-		.clickable-img:hover {
-			transform: scale(1.05);
-			filter: brightness(1.1);
-		}
-
-		.ppt-container {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%;
-			height: 0;
-			overflow: hidden;
-			background: #000;
-			border-radius: 12px;
-			margin-top: 12px;
-		}
-
-		.ppt-container iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: none;
-		}
-
-		/* ── Local Video Section ── */
-		.local-video-section {
-			animation-delay: 0.66s;
-		}
-
-		.local-video-wrap {
-			position: relative;
-			width: 100%;
-			background: #000;
-			border-radius: 12px;
-			overflow: hidden;
-		}
-
-		.local-video-wrap video {
-			width: 100%;
-			height: auto;
-			display: block;
-			max-height: 520px;
-			object-fit: contain;
-			background: #000;
-		}
-
-		@media (max-width: 900px) {
-			.grid {
-				grid-template-columns: 1fr;
-			}
-
-			.two-column {
-				grid-template-columns: 1fr;
-			}
-
-			.card {
-				min-height: auto;
-			}
-
-			.poster {
-				height: auto;
-			}
-
-			.profile {
-				padding: 24px 18px;
-			}
-
-			.section-item {
-				grid-template-columns: 1fr;
-				gap: 6px;
-			}
-		}
-	</style>
+  @media print{
+    body{ background:#fff; padding:0; }
+    .sheet{ border:none; }
+  }
+</style>
 </head>
-
 <body>
-	<div class="container">
-		<section class="profile">
-			<img src="foto.jpeg" alt="Foto Luthfi" />
-			<h1>ABDULLAH LUTHFI</h1>
-			<h1>152024211</h1>
-		</section>
 
-		<section class="grid">
-			<article class="card">
-				<div class="title">Video YouTube</div>
-				<div class="video-wrap">
-					<iframe src="https://www.youtube.com/embed/8_wosFLNJpM" title="Video YouTube Saya"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
-				</div>
-			</article>
+  <div class="sheet">
+    <span class="bl"></span><span class="br"></span>
 
-			<article class="card">
-				<div class="title">T1</div>
-				<div class="content">
-					<p>
-						1. Record yourself in a 1 to 3 minutes videos reflecting (1) what you have learned (you didn't
-						know before and now you know) about verbal and nonverbal communication; (2) What surprised you
-						and what you want to know more?
-					</p>
-					<p>
-						2. Upload your reflection video either in a YouTube channel or Google Drive
-					</p>
-					<p>
-						3. Link your video into your Google Sites
-					</p>
-					<p>
-						4. Send the link to the e-learning
-					</p>
+    <div class="doc-tag">
+      <span>DOC // PROFILE-01</span>
+      <span>REV. 2026</span>
+    </div>
 
-				</div>
-			</article>
+    <header>
+      <div class="photo-frame">
+        <img src="foto.jpeg" alt="Abdullah Luthfi"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="fallback">AL</div>
+      </div>
+      <div>
+        <h1>Abdullah Luthfi</h1>
+        <div class="role">Game Developer · IoT &amp; AI Enthusiast · Network &amp; Security</div>
+        <div class="contact-row">
+          <a href="mailto:luthfikkc@gmail.com">✉ luthfikkc@gmail.com</a>
+          <a href="https://github.com/adlluthfi" target="_blank">⌥ github.com/adlluthfi</a>
+          <a href="https://whatsapp.com/6283870826304" target="_blank">☎ WhatsApp</a>
+        </div>
+      </div>
+    </header>
 
-			<article class="card">
-				<div class="title">Poster</div>
-				<img class="poster" src="poster.png" alt="Poster tugas saya" />
-			</article>
+    <section>
+      <div class="sec-head"><span class="idx">01</span><h2>Profile</h2><span class="rule"></span></div>
+      <p class="lede">Computer Network Engineering graduate now studying Informatics, with a hands-on range that spans game development, IoT hardware, and web security. Comfortable building a Unity game end-to-end, wiring up an IoT robot, or testing a website for vulnerabilities — and equally comfortable leading a group, having trained flag-ceremony (Paskibra) teams and taught ICT to elementary students. Currently exploring core AI algorithms to bring intelligent behaviour into future projects.</p>
+    </section>
 
-			<article class="card">
-				<div class="title">T2</div>
-				<div class="content">
-					<p>
-						<strong>People-Oriented Listeners</strong>
+    <section>
+      <div class="sec-head"><span class="idx">02</span><h2>Experience</h2><span class="rule"></span></div>
+      <div class="timeline">
 
-					</p>
-					<p>
-						People-oriented listeners are people who focus more on relationships and emotions when they
-						listen to someone speaking.
-						They usually care about the speaker's feelings and enjoy personal stories or real-life
-						experiences.
-						For example, when someone gives a presentation, people-oriented listeners prefer stories about
-						people rather than just data or statistics.
-						So, to engage these listeners, a presenter can share personal stories, experiences, or examples
-						that involve people.
-					</p>
-					<p>
-						<strong>Include Q&A Sessions</strong>
-					</p>
-					<p>
-						During a presentation, the audience's attention span is usually limited. Because of that, it is
-						important to make the presentation more interactive.
-						One way to do this is by including Question and Answer sessions.
-						Q&A sessions allow the audience to ask questions, share their opinions, and become more involved
-						in the presentation.
-						This helps the audience stay focused and understand the topic better.
-					</p>
-					<p>
-						<strong>152024211 abdullah luthfi</strong>
-					</p>
-					<p>
-						<strong>152023103 Muhammad Roji Taufik</strong>
-					</p>
-				</div>
-			</article>
-		</section>
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">Unity Game Developer</span>
+            <span class="date">Ongoing</span>
+          </div>
+          <div class="org">Dreambud — Independent / </div>
+          <ul>
+            <li>Building gameplay systems and mechanics in Unity Engine 6 (C#).</li>
+            <li>Own end-to-end feature work from prototyping to implementation and testing.</li>
+          </ul>
+        </div>
 
-		<!-- Bagian Structure dan Planning -->
-		<section class="two-column">
-			<article class="section-box">
-				<h3>🎯 Planning</h3>
-				<div class="content-wrapper">
-					<div class="section-item">
-						<div class="section-label">Title</div>
-						<div class="section-value">Hack Mind: Why Humans Are Cybersecurity's Greatest "Zero-Day Exploit"
-						</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Type of Purpose</div>
-						<div class="section-value">Inspiration & Education</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Purpose Statement</div>
-						<div class="section-value">The audience will understand why hackers target their psychology
-							instead of their computers and will start being more careful with digital requests.</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Key Ideas</div>
-						<div class="section-value">
-							<ul style="margin-left:16px;">
-								<li>Technology is strong, but humans are the "unpatchable" vulnerability.</li>
-								<li>Hackers use emotions (fear, urgency, trust) to bypass expensive security.</li>
-								<li>Security is a shared responsibility; everyone is a "Human Firewall."</li>
-							</ul>
-						</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Grabber</div>
-						<div class="section-value">
-							<ul style="margin-left:16px;">
-								<li>How much did your company spend on security software this year?</li>
-								<li>Did you know that 90% of cyberattacks start with a single human mistake, not a
-									system bug?</li>
-							</ul>
-						</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Overriding Theme</div>
-						<div class="section-value">Hackers don't always break into systems; they often just log in using
-							the doors we leave open for them.</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Audience Outcomes</div>
-						<div class="section-value">
-							<strong>What should they know?</strong>
-							<ul style="margin-left:16px;">
-								<li>The "Attack Lifecycle" (Recon → Hook → Exploit → Exit).</li>
-								<li>That hackers target feelings, not just files.</li>
-							</ul>
-							<strong>What should they do?</strong>
-							<ul style="margin-left:16px;">
-								<li>Pause before clicking "urgent" links.</li>
-								<li>Verify identity before sharing sensitive info.</li>
-							</ul>
-							<strong>What should they feel?</strong>
-							<ul style="margin-left:16px;">
-								<li>Aware: Realizing they are a target.</li>
-								<li>Empowered: Knowing that a "Zero Trust" mindset makes them a strong "Human Firewall."
-								</li>
-								<li>Vigilant: Ready to spot the psychological "hooks."</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</article>
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">Banquet Server</span>
+            <span class="date">—</span>
+          </div>
+          <div class="org">Hotel Pullman</div>
+          <ul>
+            <li>Delivered service for banquet events, coordinating with the team under time pressure to maintain guest-facing standards.</li>
+          </ul>
+        </div>
 
-			<article class="section-box">
-				<h3>📋 Structure</h3>
-				<div class="content-wrapper">
-					<div class="section-item">
-						<div class="section-label">Introduction</div>
-						<div class="section-value">
-							<ul style="margin-left:16px;">
-								<li>State the Security Paradox: High-tech systems vs. human error.</li>
-								<li>Define the "Hack Mind" concept.</li>
-							</ul>
-						</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Body</div>
-						<div class="section-value">
-							<ul style="margin-left:16px;">
-								<li><strong>The Why:</strong> Contrast logical computer systems with emotional,
-									unpredictable human minds.</li>
-								<li><strong>The Mechanics:</strong> Explain the 5 Triggers (Urgency, Authority,
-									Curiosity, Greed, Trust).</li>
-								<li><strong>The Threats:</strong> Give quick examples of Phishing, Vishing, and Baiting.
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="section-item">
-						<div class="section-label">Closing</div>
-						<div class="section-value">
-							<ul style="margin-left:16px;">
-								<li>Introduce The Cure: The "Zero Trust" strategy.</li>
-								<li>Conclusion: Summarize that awareness is the best "patch" for the human mind.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</article>
-		</section>
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">ICT Teacher — Elementary School</span>
+            <span class="date">—</span>
+          </div>
+          <div class="org">Basic School</div>
+          <ul>
+            <li>Taught foundational computer and technology literacy to elementary students.</li>
+          </ul>
+        </div>
 
-		<!-- Bagian Training -->
-		<section class="ppt-section">
-			<article class="section-box">
-				<h3>🎓 Training</h3>
-				<div class="content-wrapper">
-					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-						<a href="gambar1.png" target="_blank" rel="noopener">
-							<img src="gambar1.png" alt="Training Image 1" class="clickable-img"
-								style="width: 100%; border-radius: 8px;" />
-						</a>
-						<a href="gambar2.png" target="_blank" rel="noopener">
-							<img src="gambar2.png" alt="Training Image 2" class="clickable-img"
-								style="width: 100%; border-radius: 8px;" />
-						</a>
-					</div>
-				</div>
-			</article>
-		</section>
+        <div class="titem">
+          <div class="titem-head">
+            <span class="pos">Paskibra Coach — Elementary &amp; Junior High</span>
+            <span class="date">—</span>
+          </div>
+          <div class="org">Basic School &amp; Middle School</div>
+          <ul>
+            <li>Trained flag-ceremony (Paskibra) teams, building discipline, precision, and teamwork ahead of ceremonial events.</li>
+          </ul>
+        </div>
 
-		<!-- Bagian Presentasi PPT -->
-		<section class="ppt-section">
-			<article class="section-box">
-				<h3>📊 Presentasi</h3>
-				<div class="content-wrapper">
-					<div
-						style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-						<iframe loading="lazy"
-							style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-							src="https://www.canva.com/design/DAHJEbE-ejw/8NXgUBoYTXwUSmLw7zYgxQ/view?embed"
-							allowfullscreen="allowfullscreen" allow="fullscreen">
-						</iframe>
-					</div>
-					<a href="https://www.canva.com/design/DAHJEbE-ejw/8NXgUBoYTXwUSmLw7zYgxQ/view?utm_content=DAHJEbE-ejw&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-						target="_blank" rel="noopener"
-						style="color: var(--accent); text-decoration: none; font-size: 0.9rem;">Hack Mind by 152024211
-						ABDULLAH LUTHFI</a>
-				</div>
-			</article>
-		</section>
+      </div>
+    </section>
 
-		<!-- ══ Bagian Video Google Drive (baru) ══ -->
-		<section class="ppt-section local-video-section">
-			<article class="section-box">
-				<h3>🎬 Video Presentasi</h3>
-				<div class="content-wrapper">
-					<!--
-						Cara mendapatkan link embed Google Drive:
-						1. Buka file video di Google Drive
-						2. Klik kanan → "Bagikan" → pastikan akses "Siapa saja yang memiliki link"
-						3. Salin ID file dari URL: drive.google.com/file/d/[ID_FILE_DI_SINI]/view
-						4. Ganti GDRIVE_FILE_ID di bawah dengan ID tersebut
-					-->
-					<div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; border-radius: 12px; overflow: hidden; background: #000;">
-						<iframe
-							src="https://drive.google.com/file/d/1eUP6K___RmI1HB8FoT6Nuup0IspPSi46/preview"
-							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-							allow="autoplay"
-							allowfullscreen>
-						</iframe>
-					</div>
-				</div>
-			</article>
-		</section>
+    <section>
+      <div class="sec-head"><span class="idx">03</span><h2>Education</h2><span class="rule"></span></div>
 
-	</div>
+      <div class="edu-item">
+        <div class="edu-main">
+          <div class="deg">Bachelor's Degree, Informatics <em style="color:var(--muted); font-style:normal;">(in progress)</em></div>
+          <div class="school">Bandung Institute of Technology — Indonesia</div>
+        </div>
+        <div class="date">2023 — Present</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-main">
+          <div class="deg">SMK — Computer &amp; Network Engineering (TKJ)</div>
+          <div class="school">Vocational High School</div>
+        </div>
+        <div class="date">Graduate</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="idx">04</span><h2>Technical Skills</h2><span class="rule"></span></div>
+      <div class="skill-groups">
+        <div class="skill-group">
+          <div class="g-label">Development</div>
+          <div class="tag-row">
+            <span class="tag">Unity Engine 6</span>
+            <span class="tag">C#</span>
+            <span class="tag">HTML / CSS / JS</span>
+            <span class="tag">Git &amp; GitHub</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="g-label">Security &amp; Networking</div>
+          <div class="tag-row">
+            <span class="tag">Website Vulnerability Analysis</span>
+            <span class="tag">Computer Networking</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="g-label">Hardware &amp; AI</div>
+          <div class="tag-row">
+            <span class="tag">IoT Robotics</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">AI / ML Algorithms</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="g-label">Leadership &amp; Teaching</div>
+          <div class="tag-row">
+            <span class="tag">Team Training &amp; Coaching</span>
+            <span class="tag">ICT Instruction</span>
+            <span class="tag">Hotel Service</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>ABDULLAH LUTHFI · CV LAST BUILT 2026 · v1.0</footer>
+  </div>
+
 </body>
-
 </html>
